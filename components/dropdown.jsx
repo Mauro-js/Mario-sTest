@@ -1,6 +1,6 @@
 'use client'
-import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDroprightCircle } from "react-icons/io";
+import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { useState } from 'react';
 
 const Dropdown = () => {
@@ -11,17 +11,15 @@ const Dropdown = () => {
   };
 
   return (
-    <div className="min-w-full mx-auto">
-      <div className="w-96 flex text-xl">
-      Test 1
+    <div className="min-w-full">
         <button
           type="button"
-          className="flex"
+          className="flex w-1/2 mx-auto justify-between font-blod bg-cyan-700 rounded-lg "
           onClick={toggleDropdown}
         >
-          {isOpen ? <IoIosArrowDown className="my-auto" size={20} /> : <IoIosArrowForward className="my-auto" size={20} />}
+          <span className="font-blod mx-auto my-auto text-3xl">Test 1</span>
+          {isOpen ? <IoIosArrowDropdownCircle className="my-auto mx-4" size={20} /> : <IoIosArrowDroprightCircle className="my-auto" size={20} />}
         </button>
-      </div>
       {isOpen && (
         <div
           className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
