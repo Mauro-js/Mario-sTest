@@ -13,23 +13,29 @@ const inter = Inter({ subsets: ["latin"] });
 const titles = ["Mario", "Mauro", "Marco", "Pablo"];
 
 const glasses = [
-          <IoGlassesOutline className="headerIcon" size={80} />,
-          <IoGlasses className="headerIcon" size={80} />,
-          <IoGlassesSharp className="headerIcon" size={80} />,
-          <FaGlasses className="headerIcon" size={80} />,
-          <IoIosGlasses className="headerIcon" size={80} />,
-          <IoMdGlasses className="headerIcon" size={80} />,
-          <LuGlasses className="headerIcon" size={80} />,
-          <Gi3dGlasses className="headerIcon" size={80} />,
-          <GiSunglasses className="headerIcon" size={80} />,
-          <GiProtectionGlasses className="headerIcon" size={80} />
+          <IoGlassesOutline className="tracking-in-expand headerIcon" size={80} />,
+          <IoGlasses className="tracking-in-expand headerIcon" size={80} />,
+          <IoGlassesSharp className="tracking-in-expand headerIcon" size={80} />,
+          <FaGlasses className="tracking-in-expand headerIcon" size={80} />,
+          <IoIosGlasses className="tracking-in-expand headerIcon" size={80} />,
+          <IoMdGlasses className="tracking-in-expand headerIcon" size={80} />,
+          <LuGlasses className="tracking-in-expand headerIcon" size={80} />,
+          <Gi3dGlasses className="tracking-in-expand headerIcon" size={80} />,
+          <GiSunglasses className="tracking-in-expand headerIcon" size={80} />,
+          <GiProtectionGlasses className="tracking-in-expand headerIcon" size={80} />
 ]
 
 const Header = () => {
   const [title, setTitle] = useState("Mario");
   const [glass, setGlass] = useState(glasses[0]);
+  const [vibrate, setVibrate] = useState("");
 
   const toggleTitle = () => {
+    if(vibrate==="vibrate") {
+      setVibrate("vibrate2")
+    } else {
+      setVibrate("vibrate")
+    }
     const position = titles.indexOf(title);
     if(position=== 3) {
       setTitle(titles[0])
@@ -52,8 +58,8 @@ const Header = () => {
 
   return (
     <header>
-      <div onClick={toggleTitle}>
-        <h1>{title}'s Test</h1>
+      <div className={"no-select " + vibrate} onClick={toggleTitle}>
+        <h1 className="tracking-in-expand">{title}'s Test</h1>
         {glass}
       </div>
     </header>

@@ -3,7 +3,7 @@ import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { useState } from 'react';
 
-const Dropdown = () => {
+const Dropdown = ({test}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -16,7 +16,7 @@ const Dropdown = () => {
             className="listButton"
             onClick={toggleDropdown}
           >
-            <h1>Test 1</h1>
+            <h1 className="no-select">{test.name}</h1>
             {isOpen ? <IoIosArrowDropdownCircle className="listIcon" size={30} /> : <IoIosArrowDroprightCircle className="listIcon" size={30} />}
           </div>
         <br/>
@@ -24,15 +24,9 @@ const Dropdown = () => {
         <div
           className="optionsContent"
         >
-            <div>
-              Opción 1
-            </div>
-            <div>
-              Opción 2
-            </div>
-            <div>
-              Opción 3
-            </div>
+          {
+            test.tests.map(part => <div className="no-select">{part.name}</div>)
+          }
         </div>
       )}
     </>

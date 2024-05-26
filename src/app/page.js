@@ -1,12 +1,12 @@
-import Image from "next/image";
 import Dropdown from "../../components/dropdown";
+import tests  from "../../public/tests.json";
 
 export default function Home() {
   return (
     <main>
-      <Dropdown />
-      <Dropdown />
-      <Dropdown />
+      {
+        tests.map(test => <Dropdown test={test} />)
+      }
     </main>
   );
 }
