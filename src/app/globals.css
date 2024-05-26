@@ -1,33 +1,173 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 2, 6, 23;
   --background-end-rgb: 2, 6, 23;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+main {
+  width: 95vw;
+  height: 100%;
+  background-color: rgb(15 23 42);
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
+  margin: 0px;
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+header {
+  color: rgb(255 255 255);
+  padding-top: 0px;
+  margin: 0px;
 }
+
+header div {
+  background-color: rgb(14 116 144);
+  max-height: 7rem;
+  max-width: 14rem;
+  border-radius: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  padding: 0.25rem;
+}
+
+header h1 {
+  margin-top: 0.25rem; /* 4px */
+  margin-bottom: 0.25rem; /* 4px */
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.headerIcon {
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(251 191 36);
+}
+
+.listButton {
+  display: flex;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5rem;
+  padding: 5px;
+  background-color: rgb(14 116 144);
+  color: white;
+  cursor: pointer;
+}
+
+.listButton:hover{
+  transform: scale(1.01);
+  box-shadow: rgba(2, 6, 23, 0.9) 0px 8px 24px;
+}
+
+.listButton:active{
+  transform: scale(.99);
+}
+
+.listButton h1 {
+  font-size: 25px;
+  font-weight: blod;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.listIcon {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.optionsContent {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(8 51 68);
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-radius: 0.5rem;
+  font-size: 25px;
+  box-shadow: rgba(255, 255, 255, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgb(8, 51, 68, 0.8) 0px 1px 0px inset;
+}
+
+
+.optionsContent *:nth-child(even) {
+  background-color: rgb(21 94 117);
+}
+
+.optionsContent > * {
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  font-weight: 400;
+}
+.optionsContent > *:hover {
+  font-size: 28px;
+  font-weight: 600;
+  background-color: rgb(12 74 110);
+
+
+}
+
+@media (min-width: 640px) { 
+  header h1 {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+  }
+ }
+
+@media (min-width: 768px) {
+  header div {
+    max-width: 28rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    font-size: 3rem; /* 48px */
+    line-height: 1;
+  }
+
+  .headerIcon{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+ }
+
+ @media (min-width: 1024px) { 
+  header div {
+    max-width: 32rem;
+  }
+
+  header h1{
+    font-size: 3.75rem; /* 60px */
+    line-height: 1;
+  }
+ }
+
+ @media (min-width: 1280px) {
+  header div {
+    max-width: 36rem;
+  }
+ }
