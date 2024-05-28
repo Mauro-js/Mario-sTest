@@ -146,7 +146,7 @@ header h1 {
 }
 
 .optionsContent > *:active{
-  box-shadow: rgba(8, 47, 73, .25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  box-shadow: rgba(12, 74, 110, .25) 0px 30px 60px -12px inset, rgb(0, 0, 0) 0px 25px 36px -18px inset;
   font-size: 25px;
 }
 
